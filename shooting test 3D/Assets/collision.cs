@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class collision : MonoBehaviour
 {
+    public GameObject healthbar;
+    public float MaxHealth;
+    float health;
     private void OnTriggerEnter(Collider other)
     {
-        double num = 25.8;
-        transform.position = new Vector3((float)num, transform.position.y, transform.position.z);
+        //transform.position = new Vector3((float)num, transform.position.y, transform.position.z);
         if (other.gameObject.tag == "bullet")
         {
+            bullet bull = other.gameObject.GetComponent<bullet>();
+            health -= bull.damage;
+            float bar = 8.0f * health / MaxHealth;
+            healthbar.transform.localScale = new Vector3(bar, 1.5f, 0.1f);
             Destroy(other.gameObject);
+            if (health <= 0.0f)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = MaxHealth;
     }
 
     // Update is called once per frame
