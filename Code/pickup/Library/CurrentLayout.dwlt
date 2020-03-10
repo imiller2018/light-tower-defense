@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 474}
   m_MaxSize: {x: 14002, y: 14024}
   vertical: 0
-  controlID: 887
+  controlID: 222
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 474}
   m_MaxSize: {x: 10000, y: 14024}
   vertical: 1
-  controlID: 830
+  controlID: 223
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 224}
   m_MaxSize: {x: 8004, y: 4024}
   vertical: 0
-  controlID: 831
+  controlID: 224
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -381,9 +381,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6c070000
-      m_LastClickedID: 0
-      m_ExpandedIDs: defbffffee0b0000
+      m_SelectedIDs: 422e0000
+      m_LastClickedID: 11842
+      m_ExpandedIDs: e8f8ffff722e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -438,9 +438,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -19.16204, y: 0.7418827, z: 1.7318885}
+    m_Target: {x: 12.137152, y: -6.2305827, z: -9.4320965}
     speed: 2
-    m_Value: {x: -19.16204, y: 0.7418827, z: 1.7318885}
+    m_Value: {x: 12.137152, y: -6.2305827, z: -9.4320965}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -468,9 +468,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.004063592, y: 0.6582467, z: -0.0035532832, w: -0.752783}
+    m_Target: {x: 0.10007422, y: 0.85247195, z: -0.17715679, w: 0.4815519}
     speed: 2
-    m_Value: {x: -0.004063592, y: 0.6582467, z: -0.0035532832, w: -0.752783}
+    m_Value: {x: 0.10007422, y: 0.85247195, z: -0.17715679, w: 0.4815519}
   m_Size:
     m_Target: 22.804344
     speed: 2
@@ -530,14 +530,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: 40
-  m_LastProjectPath: C:\Users\Phi\Documents\unity project\pickup
+  m_LastProjectPath: C:\Users\Phi\Documents\GitHub\light-tower-defense\Code\pickup
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7e090000
-    m_LastClickedID: 2430
-    m_ExpandedIDs: 000000007e09000000ca9a3b
+    m_SelectedIDs: 2e2c0000
+    m_LastClickedID: 11310
+    m_ExpandedIDs: 000000002e2c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -565,7 +565,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007e09000000ca9a3b
+    m_ExpandedIDs: 000000002e2c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
