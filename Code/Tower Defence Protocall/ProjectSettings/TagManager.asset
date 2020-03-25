@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - item
+  - table
+  - turret
+  - turret_table
+  - bullet
   layers:
   - Default
   - TransparentFX
