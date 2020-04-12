@@ -1,0 +1,102 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CraftingTable : TableScript
+{
+    public float totalCraftingTime;
+    public CraftingRecipe CraftRec;
+
+    public bool isCraftable;
+    private List<GameObject> items = new List<GameObject>();
+    private List<Item> itemDataList = new List<Item>();
+    public float craftTime = 0;
+    private int itemcounter = -1;
+
+    public new bool holdingStatus()
+    {
+        return (items.Count == 2);
+    }
+
+    private void craft()
+    {
+        item = Instantiate(CraftRec.Craft()) as GameObject;
+        item.transform.position = holder.transform.position;
+        item.transform.rotation = gameObject.transform.rotation;
+        item.GetComponent<Rigidbody>().isKinematic = true;
+        item.GetComponent<Collider>().enabled = true;
+        item.tag = "item";
+        holding = true;
+    }
+
+    public void increaseCraftBar()
+    {
+        if (isCraftable)
+        {
+            craftTime += Time.deltaTime;
+            if (craftTime >= totalCraftingTime)
+            {
+                craftTime = 0;
+                itemcounter = 0;
+                craft();
+                isCraftable = false;
+                removeAllItems();
+            }
+        }
+    }
+
+    public new void attach(GameObject go)
+    {
+        itemcounter++;
+        items.Add(go);
+        itemDataList.Add(go.GetComponent<Item>());
+        go.transform.position = specialItem.transform.position;
+        updateCrafting();
+        Updatebar();
+    }
+
+    public new GameObject remove()
+    {
+        if (holding)
+        {
+            item.GetComponent<Rigidbody>().isKinematic = false;
+            item.GetComponent<Collider>().enabled = false;
+            holding = false;
+            return item;
+        }
+        else if (itemcounter >= 0)
+        {
+            GameObject lastitem = items[itemcounter];
+            items.RemoveAt(itemcounter);
+            itemDataList.RemoveAt(itemcounter);
+            itemcounter--;
+            lastitem.GetComponent<Rigidbody>().isKinematic = false;
+            lastitem.GetComponent<Collider>().enabled = false;
+            return lastitem;
+        }
+        updateCrafting();
+        Updatebar();
+        return null;
+    }
+
+    private void updateCrafting()
+    {
+        isCraftable = CraftRec.CanCraft(itemDataList);
+    }
+
+    private void Updatebar()
+    {
+        
+    }
+
+    private void removeAllItems()
+    {
+        foreach (GameObject i in items)
+        {
+            Destroy(i);
+        }
+        items.Clear();
+        itemDataList.Clear();
+        itemcounter = -1;
+    }
+}

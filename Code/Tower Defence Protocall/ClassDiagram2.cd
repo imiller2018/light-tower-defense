@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CraftingRecipe">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAABAAAAAAAAAAAgAAAAAAQAAAEAAA=</HashCode>
+      <FileName>Assets\scripts\Crafting System\CraftingRecipe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Item">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Crafting System\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bulletScript">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\bulletScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChestScript">
+    <Position X="6.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\ChestScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CraftingTable">
+    <Position X="4.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAIAAYAAAAAEAAgAAABAgAAAAAKAAIAACEAgAAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\CraftingTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="outterBorderScript">
+    <Position X="6.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\outterBorderScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerScript">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQQkAEIACAAAAAEQACAKAABAAAoASABCQIAAAAEQAE=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\PlayerScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableScript">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQQAAAAAEAAQAAAAAAAAIAACAAAAQAAAAEAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\TableScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Turret">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCYAACAAAABAAAhgAAAAAAAAIAAEAAAAABAAAAAgIAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\Turret.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="14" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.ScriptableObject" Collapsed="true">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LightSource">
+    <Position X="15.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABCAAACQAAAEAAAAAAEABAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\LightSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monster">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIACAAAACAEAAAAAAgIAAgAAAAQAAAAAAAgEA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\Monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterList">
+    <Position X="1" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACCAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\MonsterList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterSpawner">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\MonsterSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShopCenter">
+    <Position X="12" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\ShopCenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\Camera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Recipe">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\scripts\Crafting System\CraftingRecipe.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="MonsterType">
+    <Position X="1" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAEAAAAQAEAQAAAACAAAAAAAg=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\MonsterList.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Level">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAQAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Game Ineractions\MonsterList.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_ForceField
+  m_Shader: {fileID: -6465566751694194690, guid: c06e8ad65bc2b9047a765e2e39b0a825,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_43A5167B: 0
+    - Vector1_90BA8DB: -7.87
+    - Vector1_D2E6313E: 3
+    m_Colors:
+    - Color_A3255DD8: {r: 0.11294055, g: 0.509434, b: 0.4971584, a: 1}

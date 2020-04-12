@@ -1,0 +1,684 @@
+fileFormatVersion: 2
+guid: 840c1ac8b9261e947809a011b495495d
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      74: -437078509911184173
+    second: Light|CameraAction
+  - first:
+      74: 5869890656693009229
+    second: Light|Cube.001Action
+  - first:
+      74: -3540257194545540903
+    second: Light|Cube.002Action
+  - first:
+      74: 246148480896527571
+    second: Light|Cube.003Action
+  - first:
+      74: 8013210765440950991
+    second: Light|CubeAction.001
+  - first:
+      74: -762257101553929684
+    second: Light|CylinderAction
+  - first:
+      74: 7698975497092689601
+    second: Light|Left Hand.001Action
+  - first:
+      74: -4817247752584022229
+    second: Light|Left HandAction
+  - first:
+      74: -7626363906017909467
+    second: Light|LightAction
+  - first:
+      74: 7429849385520177162
+    second: Light|Sphere.001Action
+  - first:
+      74: -5858836628570536990
+    second: Light|Sphere.002Action
+  - first:
+      74: -6950010595071455096
+    second: Light|SphereAction
+  - first:
+      74: 5022506926285917995
+    second: Light|SuzanneAction
+  - first:
+      74: 8067587804724572735
+    second: Light|TorusAction
+  - first:
+      74: 8440248360967096626
+    second: Camera|CameraAction
+  - first:
+      74: -300738737519976610
+    second: Camera|Cube.001Action
+  - first:
+      74: 7627602391417733511
+    second: Camera|Cube.002Action
+  - first:
+      74: -5821363532913343639
+    second: Camera|Cube.003Action
+  - first:
+      74: -1180700081067377582
+    second: Camera|CubeAction.001
+  - first:
+      74: -3809952647493575977
+    second: Camera|CylinderAction
+  - first:
+      74: -555598194695093163
+    second: Camera|Left Hand.001Action
+  - first:
+      74: 4171943133041158766
+    second: Camera|Left HandAction
+  - first:
+      74: -1513925036567710636
+    second: Camera|LightAction
+  - first:
+      74: -3354818698611602066
+    second: Camera|Sphere.001Action
+  - first:
+      74: 1983613718420385845
+    second: Camera|Sphere.002Action
+  - first:
+      74: -1958668491520462804
+    second: Camera|SphereAction
+  - first:
+      74: -3719499804922260703
+    second: Camera|SuzanneAction
+  - first:
+      74: -3212204915070973512
+    second: Camera|TorusAction
+  - first:
+      74: 4677371705986153481
+    second: Cube|CameraAction
+  - first:
+      74: 9036694105013053538
+    second: Cube|Cube.001Action
+  - first:
+      74: -8929536445494971869
+    second: Cube|Cube.002Action
+  - first:
+      74: -2252302417926332172
+    second: Cube|Cube.003Action
+  - first:
+      74: -7918129362319027497
+    second: Cube|CubeAction.001
+  - first:
+      74: -4438923420132555670
+    second: Cube|CylinderAction
+  - first:
+      74: -5973015069984703956
+    second: Cube|Left Hand.001Action
+  - first:
+      74: -7468267353997082730
+    second: Cube|Left HandAction
+  - first:
+      74: -2756421584295256318
+    second: Cube|LightAction
+  - first:
+      74: -5224224641880792917
+    second: Cube|Sphere.001Action
+  - first:
+      74: 2966519298807224645
+    second: Cube|Sphere.002Action
+  - first:
+      74: -7212608545778248225
+    second: Cube|SphereAction
+  - first:
+      74: -3023543646265994782
+    second: Cube|SuzanneAction
+  - first:
+      74: 3170302941198363449
+    second: Cube|TorusAction
+  - first:
+      74: -3299178882980226264
+    second: Cylinder|CameraAction
+  - first:
+      74: -5182580781479304208
+    second: Cylinder|Cube.001Action
+  - first:
+      74: 5419522975655660682
+    second: Cylinder|Cube.002Action
+  - first:
+      74: -8150022511611145228
+    second: Cylinder|Cube.003Action
+  - first:
+      74: 4266045416369825290
+    second: Cylinder|CubeAction.001
+  - first:
+      74: -88723805440604879
+    second: Cylinder|CylinderAction
+  - first:
+      74: -115612865579049909
+    second: Cylinder|Left Hand.001Action
+  - first:
+      74: 2786420292040483684
+    second: Cylinder|Left HandAction
+  - first:
+      74: 2131784477776736117
+    second: Cylinder|LightAction
+  - first:
+      74: -1362414421946883442
+    second: Cylinder|Sphere.001Action
+  - first:
+      74: -6680379834809303406
+    second: Cylinder|Sphere.002Action
+  - first:
+      74: -8962464159619410790
+    second: Cylinder|SphereAction
+  - first:
+      74: 7585730672709299016
+    second: Cylinder|SuzanneAction
+  - first:
+      74: -3315544378689175414
+    second: Cylinder|TorusAction
+  - first:
+      74: 4996564767056256080
+    second: Sphere|CameraAction
+  - first:
+      74: 7104456671830455462
+    second: Sphere|Cube.001Action
+  - first:
+      74: 5418136335338774783
+    second: Sphere|Cube.002Action
+  - first:
+      74: 4446692209159393101
+    second: Sphere|Cube.003Action
+  - first:
+      74: -7281406130967981712
+    second: Sphere|CubeAction.001
+  - first:
+      74: 5104565111197285270
+    second: Sphere|CylinderAction
+  - first:
+      74: -5256802951476540951
+    second: Sphere|Left Hand.001Action
+  - first:
+      74: -5402396695436421172
+    second: Sphere|Left HandAction
+  - first:
+      74: 8881254776753207653
+    second: Sphere|LightAction
+  - first:
+      74: 2623217103694749759
+    second: Sphere|Sphere.001Action
+  - first:
+      74: -3177975497958255916
+    second: Sphere|Sphere.002Action
+  - first:
+      74: -3100628101864396295
+    second: Sphere|SphereAction
+  - first:
+      74: -1245495561614857829
+    second: Sphere|SuzanneAction
+  - first:
+      74: -1843806060121362456
+    second: Sphere|TorusAction
+  - first:
+      74: 8826305006494773612
+    second: Left Hand|CameraAction
+  - first:
+      74: 68333546626558702
+    second: Left Hand|Cube.001Action
+  - first:
+      74: 2754667007128679004
+    second: Left Hand|Cube.002Action
+  - first:
+      74: -5809856317432420336
+    second: Left Hand|Cube.003Action
+  - first:
+      74: 2064360447480021415
+    second: Left Hand|CubeAction.001
+  - first:
+      74: -4442473277960723582
+    second: Left Hand|CylinderAction
+  - first:
+      74: 2577051513537962715
+    second: Left Hand|Left Hand.001Action
+  - first:
+      74: -8423905665439083247
+    second: Left Hand|Left HandAction
+  - first:
+      74: -8362524838258090361
+    second: Left Hand|LightAction
+  - first:
+      74: -1189635320507411719
+    second: Left Hand|Sphere.001Action
+  - first:
+      74: 2403367726668397484
+    second: Left Hand|Sphere.002Action
+  - first:
+      74: 5678298843957278635
+    second: Left Hand|SphereAction
+  - first:
+      74: 5877131350474868969
+    second: Left Hand|SuzanneAction
+  - first:
+      74: 3046581464841243307
+    second: Left Hand|TorusAction
+  - first:
+      74: -1489832937513433573
+    second: Cube.001|CameraAction
+  - first:
+      74: -8515560403302317629
+    second: Cube.001|Cube.001Action
+  - first:
+      74: 8888790717876117480
+    second: Cube.001|Cube.002Action
+  - first:
+      74: 1779057065894527374
+    second: Cube.001|Cube.003Action
+  - first:
+      74: 7693504525942378453
+    second: Cube.001|CubeAction.001
+  - first:
+      74: 8199798356239145933
+    second: Cube.001|CylinderAction
+  - first:
+      74: -1056422779023574110
+    second: Cube.001|Left Hand.001Action
+  - first:
+      74: 5625320077125880104
+    second: Cube.001|Left HandAction
+  - first:
+      74: 7230306397454217088
+    second: Cube.001|LightAction
+  - first:
+      74: 4666741171455007683
+    second: Cube.001|Sphere.001Action
+  - first:
+      74: -60576748424613450
+    second: Cube.001|Sphere.002Action
+  - first:
+      74: 8619881461887592929
+    second: Cube.001|SphereAction
+  - first:
+      74: -3564288585025793907
+    second: Cube.001|SuzanneAction
+  - first:
+      74: -5102974284181699506
+    second: Cube.001|TorusAction
+  - first:
+      74: 9114332383783914255
+    second: Cube.002|CameraAction
+  - first:
+      74: 978295544477664516
+    second: Cube.002|Cube.001Action
+  - first:
+      74: 6712369695479197947
+    second: Cube.002|Cube.002Action
+  - first:
+      74: -7944832092688391277
+    second: Cube.002|Cube.003Action
+  - first:
+      74: -2572907464589091492
+    second: Cube.002|CubeAction.001
+  - first:
+      74: -1041553994202895661
+    second: Cube.002|CylinderAction
+  - first:
+      74: -418826150106801239
+    second: Cube.002|Left Hand.001Action
+  - first:
+      74: -6876293268503739509
+    second: Cube.002|Left HandAction
+  - first:
+      74: 1770923218944990588
+    second: Cube.002|LightAction
+  - first:
+      74: -8586061680547164526
+    second: Cube.002|Sphere.001Action
+  - first:
+      74: 8222692770173303940
+    second: Cube.002|Sphere.002Action
+  - first:
+      74: 3632358391058236726
+    second: Cube.002|SphereAction
+  - first:
+      74: -8466512271914526697
+    second: Cube.002|SuzanneAction
+  - first:
+      74: -7648809780339740127
+    second: Cube.002|TorusAction
+  - first:
+      74: -2456083693435621114
+    second: Left Hand.001|CameraAction
+  - first:
+      74: -2408852352742614886
+    second: Left Hand.001|Cube.001Action
+  - first:
+      74: -1044806992591727568
+    second: Left Hand.001|Cube.002Action
+  - first:
+      74: -6023749845335269029
+    second: Left Hand.001|Cube.003Action
+  - first:
+      74: 8629203800404049403
+    second: Left Hand.001|CubeAction.001
+  - first:
+      74: 5667917544585112936
+    second: Left Hand.001|CylinderAction
+  - first:
+      74: -3955978736328062201
+    second: Left Hand.001|Left Hand.001Action
+  - first:
+      74: -9010176531655440602
+    second: Left Hand.001|Left HandAction
+  - first:
+      74: -3133122595783168825
+    second: Left Hand.001|LightAction
+  - first:
+      74: 2819693924833484380
+    second: Left Hand.001|Sphere.001Action
+  - first:
+      74: -4066631436686283659
+    second: Left Hand.001|Sphere.002Action
+  - first:
+      74: 4322265941489803780
+    second: Left Hand.001|SphereAction
+  - first:
+      74: -1249030541506856311
+    second: Left Hand.001|SuzanneAction
+  - first:
+      74: -5447944427437647393
+    second: Left Hand.001|TorusAction
+  - first:
+      74: -4155408515116315052
+    second: Sphere.001|CameraAction
+  - first:
+      74: 2947096078624564722
+    second: Sphere.001|Cube.001Action
+  - first:
+      74: 8879183051376275626
+    second: Sphere.001|Cube.002Action
+  - first:
+      74: -5802060308433564771
+    second: Sphere.001|Cube.003Action
+  - first:
+      74: 2790891808480799151
+    second: Sphere.001|CubeAction.001
+  - first:
+      74: -2751271859569242756
+    second: Sphere.001|CylinderAction
+  - first:
+      74: 4640090270411568447
+    second: Sphere.001|Left Hand.001Action
+  - first:
+      74: 5025214506328162525
+    second: Sphere.001|Left HandAction
+  - first:
+      74: -3862449635083786983
+    second: Sphere.001|LightAction
+  - first:
+      74: -3036527314473485615
+    second: Sphere.001|Sphere.001Action
+  - first:
+      74: -4436524472899874534
+    second: Sphere.001|Sphere.002Action
+  - first:
+      74: -1446629187303088666
+    second: Sphere.001|SphereAction
+  - first:
+      74: -2028013300347123906
+    second: Sphere.001|SuzanneAction
+  - first:
+      74: 9025265494377168514
+    second: Sphere.001|TorusAction
+  - first:
+      74: -2701013476745686249
+    second: Sphere.002|CameraAction
+  - first:
+      74: -5812564818110298515
+    second: Sphere.002|Cube.001Action
+  - first:
+      74: -1304855979758025232
+    second: Sphere.002|Cube.002Action
+  - first:
+      74: 3146615446265252466
+    second: Sphere.002|Cube.003Action
+  - first:
+      74: -3326558885424538950
+    second: Sphere.002|CubeAction.001
+  - first:
+      74: 1250993780296250673
+    second: Sphere.002|CylinderAction
+  - first:
+      74: 1339572884391446835
+    second: Sphere.002|Left Hand.001Action
+  - first:
+      74: 2177078745600806120
+    second: Sphere.002|Left HandAction
+  - first:
+      74: 1005499522376482526
+    second: Sphere.002|LightAction
+  - first:
+      74: -5899806263776302030
+    second: Sphere.002|Sphere.001Action
+  - first:
+      74: 6260389476474903853
+    second: Sphere.002|Sphere.002Action
+  - first:
+      74: -3422961032161299351
+    second: Sphere.002|SphereAction
+  - first:
+      74: -5604002316284753901
+    second: Sphere.002|SuzanneAction
+  - first:
+      74: 5638370136558937272
+    second: Sphere.002|TorusAction
+  - first:
+      74: 2821439590090780139
+    second: Torus|CameraAction
+  - first:
+      74: -298148347978144635
+    second: Torus|Cube.001Action
+  - first:
+      74: -445048828913155229
+    second: Torus|Cube.002Action
+  - first:
+      74: 4016355421468070639
+    second: Torus|Cube.003Action
+  - first:
+      74: -6157468521984448985
+    second: Torus|CubeAction.001
+  - first:
+      74: 1350157085881549431
+    second: Torus|CylinderAction
+  - first:
+      74: -8775386206771715999
+    second: Torus|Left Hand.001Action
+  - first:
+      74: 2831461471153936836
+    second: Torus|Left HandAction
+  - first:
+      74: 4932797093663371286
+    second: Torus|LightAction
+  - first:
+      74: 5718626886505633151
+    second: Torus|Sphere.001Action
+  - first:
+      74: 3957869602745945494
+    second: Torus|Sphere.002Action
+  - first:
+      74: -7942851588473958678
+    second: Torus|SphereAction
+  - first:
+      74: 8612003145382752170
+    second: Torus|SuzanneAction
+  - first:
+      74: -8730468044713431094
+    second: Torus|TorusAction
+  - first:
+      74: 4857523352148966702
+    second: Suzanne|CameraAction
+  - first:
+      74: -6518555898635451743
+    second: Suzanne|Cube.001Action
+  - first:
+      74: 4530228853644362746
+    second: Suzanne|Cube.002Action
+  - first:
+      74: 5692201739828860455
+    second: Suzanne|Cube.003Action
+  - first:
+      74: -2678271777258301335
+    second: Suzanne|CubeAction.001
+  - first:
+      74: -8240149683877370366
+    second: Suzanne|CylinderAction
+  - first:
+      74: 4743544912070070497
+    second: Suzanne|Left Hand.001Action
+  - first:
+      74: -686311861884552244
+    second: Suzanne|Left HandAction
+  - first:
+      74: -6151590648286593020
+    second: Suzanne|LightAction
+  - first:
+      74: -1050936793380160316
+    second: Suzanne|Sphere.001Action
+  - first:
+      74: 6960951358999984878
+    second: Suzanne|Sphere.002Action
+  - first:
+      74: 369850609635530501
+    second: Suzanne|SphereAction
+  - first:
+      74: -8990505860982819466
+    second: Suzanne|SuzanneAction
+  - first:
+      74: -3212019533202393259
+    second: Suzanne|TorusAction
+  - first:
+      74: -7056266762376855500
+    second: Cube.003|CameraAction
+  - first:
+      74: -4805450742491024743
+    second: Cube.003|Cube.001Action
+  - first:
+      74: 3244617880250996793
+    second: Cube.003|Cube.002Action
+  - first:
+      74: -8906869970063597199
+    second: Cube.003|Cube.003Action
+  - first:
+      74: 5152686050730697801
+    second: Cube.003|CubeAction.001
+  - first:
+      74: 3229214716036803315
+    second: Cube.003|CylinderAction
+  - first:
+      74: -8555059451840011219
+    second: Cube.003|Left Hand.001Action
+  - first:
+      74: 6729751854691619611
+    second: Cube.003|Left HandAction
+  - first:
+      74: -7770463821748278422
+    second: Cube.003|LightAction
+  - first:
+      74: -6452932874729689240
+    second: Cube.003|Sphere.001Action
+  - first:
+      74: 6243689899739777030
+    second: Cube.003|Sphere.002Action
+  - first:
+      74: -2002059010264719539
+    second: Cube.003|SphereAction
+  - first:
+      74: 6766131267122624411
+    second: Cube.003|SuzanneAction
+  - first:
+      74: 7411509222042126472
+    second: Cube.003|TorusAction
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
