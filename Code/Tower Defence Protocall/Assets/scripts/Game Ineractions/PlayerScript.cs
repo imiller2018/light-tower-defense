@@ -11,6 +11,10 @@ public class PlayerScript : MonoBehaviour
     public BoxCollider armColl;
     public GameObject raycastOrigin;
     public GameObject back;
+    public GameObject LArmOutObj;
+    public GameObject RArmOutObj;
+    public GameObject LArmDownObj;
+    public GameObject RArmDownObj;
 
     private bool holding;
     private Rigidbody rb;
@@ -208,7 +212,7 @@ public class PlayerScript : MonoBehaviour
                 hit.collider.enabled = false;
                 followObj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 followObj.transform.position = raycastOrigin.transform.position;
-                holding = true;
+                turnOnHolding();
                 if (Tag == "turret")
                 {
                     boxColl.size = new Vector3(1f, 1.3f, 1.8f);
@@ -222,21 +226,10 @@ public class PlayerScript : MonoBehaviour
             }
             else if (Tag == "table" || Tag == "turret_table")//check for the object hit is a table
             {
-                string name = hit.collider.gameObject.GetComponents<MonoBehaviour>()[0].GetType().Name;
-                switch (name){
-                    case "TableScript":
-                        followObj = hit.collider.gameObject.GetComponent<TableScript>().remove();
-                        break;
-                    case "ChestScript":
-                        followObj = hit.collider.gameObject.GetComponent<ChestScript>().remove();
-                        break;
-                    case "CraftingTable":
-                        followObj = hit.collider.gameObject.GetComponent<CraftingTable>().remove();
-                        break;
-                }
+                followObj = hit.collider.gameObject.GetComponent<TableScript>().remove();
                 if (followObj != null)
                 {
-                    holding = true;
+                    turnOnHolding();
                     armColl.enabled = true;
                     followObj.transform.position = raycastOrigin.transform.position;
                     if (followObj.tag == "turret")
@@ -253,6 +246,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+
     private void drop_item()
     {
         RaycastHit hit;
@@ -262,19 +256,7 @@ public class PlayerScript : MonoBehaviour
         if (Physics.Raycast(thisRaycast, out hit, pickupRange) && hit.collider.tag == "table" && followObj.tag == "item"
             && !hit.collider.gameObject.GetComponent<TableScript>().holdingStatus())
         {
-            string name = hit.collider.gameObject.GetComponent<MonoBehaviour>().GetType().Name;
-            switch (name)
-            {
-                case "TableScript":
-                    hit.collider.gameObject.GetComponent<TableScript>().attach(followObj);
-                    break;
-                case "ChestScript":
-                    hit.collider.gameObject.GetComponent<ChestScript>().attach(followObj);
-                    break;
-                case "CraftingTable":
-                    hit.collider.gameObject.GetComponent<CraftingTable>().attach(followObj);
-                    break;
-            }
+            hit.collider.gameObject.GetComponent<TableScript>().attach(followObj);
         }
         //test for turret box (areas where turrets can be placed)
         else if (Physics.Raycast(thisRaycast, out hit, pickupRange) && hit.collider.tag == "turret_table" )
@@ -301,10 +283,28 @@ public class PlayerScript : MonoBehaviour
             followObj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             followObj.GetComponent<Collider>().enabled = true;
         }
+        turnOffHolding();
+    }
+
+    private void turnOnHolding()
+    {
+        holding = true;
+        LArmOutObj.transform.localPosition = new Vector3(LArmOutObj.transform.localPosition.x, 1.7f, LArmOutObj.transform.localPosition.z);
+        RArmOutObj.transform.localPosition = new Vector3(RArmOutObj.transform.localPosition.x, 1.7f, RArmOutObj.transform.localPosition.z);
+        LArmDownObj.transform.localPosition = new Vector3(LArmDownObj.transform.localPosition.x, -2f, LArmDownObj.transform.localPosition.z);
+        RArmDownObj.transform.localPosition = new Vector3(RArmDownObj.transform.localPosition.x, -2f, RArmDownObj.transform.localPosition.z);
+    }
+
+    private void turnOffHolding()
+    {
         holding = false;
         armColl.enabled = false;
         boxColl.size = new Vector3(1f, 1.3f, 1f);
         boxColl.center = new Vector3(0f, -0.1f, 0f);
+        LArmOutObj.transform.localPosition = new Vector3(LArmOutObj.transform.localPosition.x, -2f, LArmOutObj.transform.localPosition.z);
+        RArmOutObj.transform.localPosition = new Vector3(RArmOutObj.transform.localPosition.x, -2f, RArmOutObj.transform.localPosition.z);
+        LArmDownObj.transform.localPosition = new Vector3(LArmDownObj.transform.localPosition.x, 0.9f, LArmDownObj.transform.localPosition.z);
+        RArmDownObj.transform.localPosition = new Vector3(RArmDownObj.transform.localPosition.x, 0.9f, RArmDownObj.transform.localPosition.z);
     }
 
     private float ClampAngle(float angle, float min, float max, bool inclNeg)

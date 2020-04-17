@@ -8,13 +8,14 @@ public class Monster : MonoBehaviour
     public float damageDealt;
     public float moneyDrop;
     public float attackCooldown;
+    public GameObject healthbar;
 
     private float remainingHealth;
     private Vector3 move;
-    private bool stop;
+    private bool stop = false;
     private float coolDown;
 
-    public Monster(float health, float damage, float drop)
+    public void SetStats(float health, float damage, float drop)
     {
         maxHealth = health;
         remainingHealth = health;
@@ -35,6 +36,10 @@ public class Monster : MonoBehaviour
                 attack();
                 coolDown = 0;
             }
+        }
+        else
+        {
+            
         }
     }
 
@@ -57,12 +62,17 @@ public class Monster : MonoBehaviour
     {
         if (other.tag == "Castle")
         {
-
+            stop = true;
         }
     }
 
     public void moveMonster(Vector3 m)
     {
         move = m;
+    }
+
+    public void takeDamage()
+    {
+
     }
 }

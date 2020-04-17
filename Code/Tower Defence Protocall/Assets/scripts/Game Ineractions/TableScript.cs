@@ -83,12 +83,12 @@ public class TableScript : MonoBehaviour
     public GameObject item;
     public bool holding = false;
 
-    public bool holdingStatus()
+    public virtual bool holdingStatus()
     {
         return holding;
     }
 
-    public void attach(GameObject go)
+    public virtual void attach(GameObject go)
     {
         item = go;
         go.transform.position = holder.transform.position;
@@ -98,7 +98,7 @@ public class TableScript : MonoBehaviour
         holding = true;
     }
 
-    public GameObject remove()
+    public virtual GameObject remove()
     {
         if (holding)
         {
@@ -110,7 +110,7 @@ public class TableScript : MonoBehaviour
         return null;
     }
 
-    public GameObject getItem()
+    public virtual GameObject getItem()
     {
         return item;
     }

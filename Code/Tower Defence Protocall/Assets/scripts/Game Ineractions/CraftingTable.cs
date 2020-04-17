@@ -13,9 +13,9 @@ public class CraftingTable : TableScript
     public float craftTime = 0;
     private int itemcounter = -1;
 
-    public new bool holdingStatus()
+    public override bool holdingStatus()
     {
-        return (items.Count == 2);
+        return (items.Count == 3);
     }
 
     private void craft()
@@ -31,7 +31,7 @@ public class CraftingTable : TableScript
 
     public void increaseCraftBar()
     {
-        if (isCraftable)
+        if (isCraftable && !holding)
         {
             craftTime += Time.deltaTime;
             if (craftTime >= totalCraftingTime)
@@ -45,7 +45,7 @@ public class CraftingTable : TableScript
         }
     }
 
-    public new void attach(GameObject go)
+    public override void attach(GameObject go)
     {
         itemcounter++;
         items.Add(go);
@@ -55,7 +55,7 @@ public class CraftingTable : TableScript
         Updatebar();
     }
 
-    public new GameObject remove()
+    public override GameObject remove()
     {
         if (holding)
         {

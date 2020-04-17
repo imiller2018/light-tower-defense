@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChestScript : TableScript
 {
-    public new GameObject remove()
+    public override GameObject remove()
     {
         if (holding)
         {

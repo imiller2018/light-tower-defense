@@ -14,6 +14,7 @@ public struct MonsterType
     [Range(1,20)]
     public int ammount;
     public int difficultyNum;
+    public GameObject Monster;
 }
 
 [Serializable]
