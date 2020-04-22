@@ -4,23 +4,50 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
+    public GameObject healthbar;
+    public float healthbarsize;
+    public float attackCooldown;
+
     public float maxHealth;
+    public float remainingHealth;
     public float damageDealt;
     public float moneyDrop;
-    public float attackCooldown;
-    public GameObject healthbar;
+    public float speed;
+    public float difficulty;
 
-    private float remainingHealth;
-    private Vector3 move;
     private bool stop = false;
-    private float coolDown;
+    private float coolDown = 0;
+    private bool moving = false;
+    private GameObject castle;
 
-    public void SetStats(float health, float damage, float drop)
+    /*public void SetStats(float health, float damage, float drop, float sp, float diff)
     {
         maxHealth = health;
         remainingHealth = health;
         damageDealt = damage;
         moneyDrop = drop;
+        speed = sp;
+        difficulty = diff;
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Castle")
+        {
+            stop = true;
+            this.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+        }
+        else if(other.tag == "bullet")
+        {
+            float damage = other.GetComponent<bulletScript>().getDamageVal();
+            Destroy(other.gameObject);
+            takeDamage(damage);
+        }
+    }
+
+    public void SetCastle(GameObject c)
+    {
+        castle = c;
     }
 
     void Update()
@@ -37,20 +64,15 @@ public class Monster : MonoBehaviour
                 coolDown = 0;
             }
         }
-        else
+        else if (moving)
         {
-            
+            this.GetComponent<Rigidbody>().velocity = this.transform.forward * speed;
         }
-    }
-
-    public void StopAndAttack()
-    {
-        stop = true;
     }
 
     private void attack()
     {
-
+        castle.GetComponent<CastleandSpawnerScript>().takedamage(damageDealt);
     }
 
     private float drop()
@@ -58,21 +80,38 @@ public class Monster : MonoBehaviour
         return moneyDrop;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void takeDamage(float damage)
     {
-        if (other.tag == "Castle")
+        //Debug.Log(remainingHealth);
+        remainingHealth -= damage;
+        //Debug.Log(remainingHealth);
+        setHealthBar();
+        if (remainingHealth <= 0)
         {
-            stop = true;
+            castle.GetComponent<CastleandSpawnerScript>().monsterDied(difficulty, moneyDrop);
+            Destroy(this.gameObject);
         }
     }
 
-    public void moveMonster(Vector3 m)
+    public float getDiffVal()
     {
-        move = m;
+        return difficulty;
     }
 
-    public void takeDamage()
+    public void Move()
     {
+        moving = true;
+        setHealthBar();
+    }
 
+    private void setHealthBar()
+    {
+        float ratio = remainingHealth / (float)maxHealth * healthbarsize;
+        healthbar.transform.localScale = new Vector3(ratio, healthbar.transform.localScale.y, healthbar.transform.localScale.z);
+    }
+
+    public void HealthBarRotation(Vector3 camPos)
+    {
+        healthbar.transform.LookAt(camPos, -Vector3.up);
     }
 }

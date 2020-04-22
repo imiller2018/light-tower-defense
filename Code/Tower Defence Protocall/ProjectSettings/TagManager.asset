@@ -9,6 +9,7 @@ TagManager:
   - turret
   - turret_table
   - bullet
+  - Castle
   layers:
   - Default
   - TransparentFX
