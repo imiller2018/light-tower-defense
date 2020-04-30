@@ -48,7 +48,7 @@ public class Turret : MonoBehaviour
 
     public void updateammo()
     {
-        float ratio = ammo / (float)maxAmmo * 10;
+        float ratio = ammo / (float)maxAmmo * 15;
         ammobar.transform.localScale = new Vector3(ratio, ammobar.transform.localScale.y, ammobar.transform.localScale.z);
     }
 

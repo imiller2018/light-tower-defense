@@ -67,7 +67,6 @@
     <Compile Include="Assets\scripts\CastleandSpawnerScript.cs" />
     <Compile Include="Assets\scripts\Crafting System\CraftingRecipe.cs" />
     <Compile Include="Assets\scripts\Crafting System\Item.cs" />
-    <Compile Include="Assets\scripts\Game Ineractions\Camera.cs" />
     <Compile Include="Assets\scripts\Game Ineractions\ChestScript.cs" />
     <Compile Include="Assets\scripts\Game Ineractions\CraftingTable.cs" />
     <Compile Include="Assets\scripts\Game Ineractions\LightSource.cs" />
@@ -75,12 +74,12 @@
     <Compile Include="Assets\scripts\Game Ineractions\TableScript.cs" />
     <Compile Include="Assets\scripts\Game Ineractions\Turret.cs" />
     <Compile Include="Assets\scripts\Game Ineractions\bulletScript.cs" />
+    <Compile Include="Assets\scripts\Game Ineractions\lightTable.cs" />
     <Compile Include="Assets\scripts\Game Ineractions\outterBorderScript.cs" />
     <Compile Include="Assets\scripts\HudScript.cs" />
     <Compile Include="Assets\scripts\TestScript.cs" />
     <Compile Include="Assets\scripts\monsterScripts\Monster.cs" />
     <Compile Include="Assets\scripts\monsterScripts\MonsterList.cs" />
-    <Compile Include="Assets\scripts\monsterScripts\WallScript.cs" />
     <Compile Include="Assets\scripts\shop\ShopCenter.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Users/phid8/Documents/GitHub/light-tower-defense/Code/Tower Defence Protocall/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>

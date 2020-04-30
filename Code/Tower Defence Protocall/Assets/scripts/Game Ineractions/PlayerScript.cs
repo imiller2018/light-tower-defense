@@ -19,8 +19,10 @@ public class PlayerScript : MonoBehaviour
     private bool holding;
     private Rigidbody rb;
     private bool onTurret;
+    private bool onShop;
     private GameObject followObj;
     private GameObject turret;
+    private GameObject Shop;
     private float RotationSpeed;
     private float turretState;
     private float[] range;
@@ -41,6 +43,10 @@ public class PlayerScript : MonoBehaviour
         if (onTurret)
         {
             turretcontrol();
+        }
+        else if (onShop)
+        {
+            shopcontrol();
         }
         else
         {
@@ -82,10 +88,35 @@ public class PlayerScript : MonoBehaviour
         y = ClampAngle(y, range[0], range[1], isNorthTurret);
         Quaternion newRot = Quaternion.Euler(0f, y, 0f);
         turret.transform.rotation = newRot;
-        transform.position = new Vector3(turret.transform.position.x, transform.position.y, turret.transform.position.z) - turret.transform.forward;
+        transform.position = new Vector3(turret.transform.position.x, transform.position.y, turret.transform.position.z) - 2*turret.transform.forward;
         transform.rotation = newRot;
     }
 
+
+    private void shopcontrol()
+    {
+        if (Input.GetKeyDown("a"))
+        {
+            Shop.GetComponent<ShopCenter>().movePrev();
+        }
+        else if (Input.GetKeyDown("d"))
+        {
+            Shop.GetComponent<ShopCenter>().moveNext();
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Shop.GetComponent<ShopCenter>().Buy())
+            {
+                onShop = false;
+                Shop.GetComponent<ShopCenter>().turnOffUI();
+            }
+        }
+        else if (Input.GetKeyDown("e"))
+        {
+            onShop = false;
+            Shop.GetComponent<ShopCenter>().turnOffUI();
+        }
+    }
     /*
      * player movement
      * wasd to move
@@ -130,19 +161,28 @@ public class PlayerScript : MonoBehaviour
         {
             RaycastHit hit;
             Ray thisRaycast = new Ray(back.transform.position, transform.rotation * Vector3.forward);
-            if (!holding && Physics.Raycast(thisRaycast, out hit, pickupRange) && hit.collider.tag == "turret_table" &&
-                    hit.collider.gameObject.GetComponent<TableScript>().holdingStatus())
+            if (!holding && Physics.Raycast(thisRaycast, out hit, pickupRange))
             {
-                turret = hit.collider.gameObject.GetComponent<TableScript>().getItem();
-                onTurret = true;
-                transform.position = new Vector3(turret.transform.position.x, transform.position.y, turret.transform.position.z) - turret.transform.forward;
-                transform.rotation = turret.transform.rotation;
-                int num = (int)hit.collider.gameObject.transform.rotation.eulerAngles.y;
-                range = new float[2] { num - 45, num + 45 };
-                if (range[0] < 0)
-                    isNorthTurret = true;
-                else
-                    isNorthTurret = false;
+                if (hit.collider.tag == "turret_table" &&
+                        hit.collider.gameObject.GetComponent<TableScript>().holdingStatus())
+                {
+                    turret = hit.collider.gameObject.GetComponent<TableScript>().getItem();
+                    onTurret = true;
+                    transform.position = new Vector3(turret.transform.position.x, transform.position.y, turret.transform.position.z) - turret.transform.forward;
+                    transform.rotation = turret.transform.rotation;
+                    int num = (int)hit.collider.gameObject.transform.rotation.eulerAngles.y;
+                    range = new float[2] { num - 45, num + 45 };
+                    if (range[0] < 0)
+                        isNorthTurret = true;
+                    else
+                        isNorthTurret = false;
+                }
+                else if (hit.collider.tag == "Shop")
+                {
+                    Shop = hit.collider.gameObject;
+                    Shop.GetComponent<ShopCenter>().showUI();
+                    onShop = true;
+                }
             }
         }
         if (Input.GetKey("e"))
@@ -206,14 +246,14 @@ public class PlayerScript : MonoBehaviour
         if (Physics.Raycast(thisRaycast, out hit, pickupRange))//checks if raycast hits something
         {
             string Tag = hit.collider.tag;
-            if (Tag == "item" || Tag == "turret")//check for the object hit is an item
+            if (Tag == "item" || Tag == "turret" || Tag == "Light")//check for the object hit is an item
             {
                 followObj = hit.collider.gameObject;
                 hit.collider.enabled = false;
                 followObj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 followObj.transform.position = raycastOrigin.transform.position;
                 turnOnHolding();
-                if (Tag == "turret")
+                if (Tag == "turret" || Tag == "Light")
                 {
                     boxColl.size = new Vector3(1f, 1.3f, 1.8f);
                     boxColl.center = new Vector3(0f, -0.1f, 0.4f);
@@ -224,7 +264,7 @@ public class PlayerScript : MonoBehaviour
                     armColl.enabled = true;
                 }
             }
-            else if (Tag == "table" || Tag == "turret_table")//check for the object hit is a table
+            else if (Tag == "table" || Tag == "turret_table" || Tag == "Shop")//check for the object hit is a table
             {
                 followObj = hit.collider.gameObject.GetComponent<TableScript>().remove();
                 if (followObj != null)
@@ -237,6 +277,11 @@ public class PlayerScript : MonoBehaviour
                         boxColl.size = new Vector3(1f, 1.3f, 1.8f);
                         boxColl.center = new Vector3(0f, -0.1f, 0.4f);
                         followObj.GetComponent<Turret>().putdown();
+                    }
+                    else if(followObj.tag == "Light")
+                    {
+                        boxColl.size = new Vector3(1f, 1.3f, 1.8f);
+                        boxColl.center = new Vector3(0f, -0.1f, 0.4f);
                     }
                     else
                     {
@@ -251,39 +296,59 @@ public class PlayerScript : MonoBehaviour
     {
         RaycastHit hit;
         Ray thisRaycast = new Ray(back.transform.position, transform.rotation * Vector3.forward);
-
-        //test for tables to place items
-        if (Physics.Raycast(thisRaycast, out hit, pickupRange) && hit.collider.tag == "table" && followObj.tag == "item"
-            && !hit.collider.gameObject.GetComponent<TableScript>().holdingStatus())
+        if (Physics.Raycast(thisRaycast, out hit, pickupRange))
         {
-            hit.collider.gameObject.GetComponent<TableScript>().attach(followObj);
-        }
-        //test for turret box (areas where turrets can be placed)
-        else if (Physics.Raycast(thisRaycast, out hit, pickupRange) && hit.collider.tag == "turret_table" )
-        {
-            GameObject ttable = hit.collider.gameObject;
-            if (followObj.tag == "turret" && !ttable.GetComponent<TableScript>().holdingStatus())
+            //test for tables to place items
+            if (hit.collider.tag == "table" && followObj.tag == "item"
+                && !hit.collider.gameObject.GetComponent<TableScript>().holdingStatus())
             {
-                followObj.GetComponent<Turret>().setup();
                 hit.collider.gameObject.GetComponent<TableScript>().attach(followObj);
             }
-            else if (followObj.tag == "item" && ttable.GetComponent<TableScript>().holdingStatus())
-                hit.collider.gameObject.GetComponent<TableScript>().getItem().GetComponent<Turret>().addAmmo(followObj);
-            else
+            //test for turret box (areas where turrets can be placed)
+            else if (hit.collider.tag == "turret_table")
             {
-                followObj.transform.position = raycastOrigin.transform.position + (transform.rotation * Vector3.forward) * .1f - new Vector3(0f, 0.9f, 0f);
-                followObj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                followObj.GetComponent<Collider>().enabled = true;
+                GameObject ttable = hit.collider.gameObject;
+                if (followObj.tag == "turret" && !ttable.GetComponent<TableScript>().holdingStatus())
+                {
+                    followObj.GetComponent<Turret>().setup();
+                    hit.collider.gameObject.GetComponent<TableScript>().attach(followObj);
+                }
+                else if (followObj.tag == "item" && ttable.GetComponent<TableScript>().holdingStatus())
+                    hit.collider.gameObject.GetComponent<TableScript>().getItem().GetComponent<Turret>().addAmmo(followObj);
+                else
+                {
+                    dropDefault();
+                }
             }
+            else if (hit.collider.tag == "Shop")
+            {
+                GameObject ttable = hit.collider.gameObject;
+                if (followObj.tag == "turret" && !ttable.GetComponent<TableScript>().holdingStatus())
+                {
+                    hit.collider.gameObject.GetComponent<TableScript>().attach(followObj);
+                }
+                else if (followObj.tag == "Light" && !ttable.GetComponent<TableScript>().holdingStatus())
+                {
+                    hit.collider.gameObject.GetComponent<TableScript>().attach(followObj);
+                }
+                else
+                {
+                    dropDefault();
+                }
+            }
+            //default drop item to floor
         }
-        //default drop item to floor
         else
         {
-            followObj.transform.position = raycastOrigin.transform.position + (transform.rotation * Vector3.forward) * .1f - new Vector3(0f, 0.9f, 0f);
-            followObj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            followObj.GetComponent<Collider>().enabled = true;
+            dropDefault();
         }
         turnOffHolding();
+    }
+    private void dropDefault()
+    {
+        followObj.transform.position = raycastOrigin.transform.position + (transform.rotation * Vector3.forward) * .1f - new Vector3(0f, 0.9f, 0f);
+        followObj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        followObj.GetComponent<Collider>().enabled = true;
     }
 
     private void turnOnHolding()

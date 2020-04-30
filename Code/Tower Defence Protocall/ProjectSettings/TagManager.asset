@@ -10,6 +10,8 @@ TagManager:
   - turret_table
   - bullet
   - Castle
+  - Shop
+  - Light
   layers:
   - Default
   - TransparentFX

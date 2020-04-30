@@ -11,7 +11,7 @@ public class Monster : MonoBehaviour
     public float maxHealth;
     public float remainingHealth;
     public float damageDealt;
-    public float moneyDrop;
+    public int moneyDrop;
     public float speed;
     public float difficulty;
 

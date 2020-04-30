@@ -21,7 +21,7 @@ public class CastleandSpawnerScript : MonoBehaviour
     public MonsterList monsterWaveList;
     public spawners spawnLocations;
 
-    private float money = 0;
+    public int money = 1000;
 
     public float waitTimer;
     public float startTimer;
@@ -33,6 +33,18 @@ public class CastleandSpawnerScript : MonoBehaviour
     private List<GameObject> monsterList;
     public bool hold = false;
     private int waveNum = -1;
+
+    public bool Buy(int m)
+    {
+        if (money >= m)
+        {
+            money -= m;
+            UI.GetComponent<HudScript>().UpdateMoney(money);
+            return true;
+        }
+        return false;
+    }
+
     public void takedamage(float damage)
     {
         remainingHealth -= damage;
@@ -45,6 +57,7 @@ public class CastleandSpawnerScript : MonoBehaviour
     public void addHealth(float heal)
     {
         remainingHealth += heal;
+        UI.GetComponent<HudScript>().showHealth(remainingHealth / maxHealth);
     }
 
     public void EndGame()
@@ -76,7 +89,7 @@ public class CastleandSpawnerScript : MonoBehaviour
         }
     }
 
-    public void monsterDied(float val, float m)
+    public void monsterDied(float val, int m)
     {
         difficultyCounter -= val;
         money += m;

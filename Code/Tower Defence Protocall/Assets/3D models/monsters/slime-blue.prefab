@@ -188,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 5757940305432164918}
   m_LocalRotation: {x: 0.0027457653, y: 0.0020391045, z: -0.0006788824, w: 0.9999939}
   m_LocalPosition: {x: 46.021355, y: 18.473717, z: -43.18669}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6144119345261162571}
   - {fileID: 3028271978485681766}
@@ -242,6 +242,6 @@ MonoBehaviour:
   maxHealth: 20
   remainingHealth: 20
   damageDealt: 5
-  moneyDrop: 20
-  speed: 1
+  moneyDrop: 0
+  speed: 0.5
   difficulty: 3

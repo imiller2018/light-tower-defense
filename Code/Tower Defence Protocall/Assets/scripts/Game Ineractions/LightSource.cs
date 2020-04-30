@@ -9,6 +9,7 @@ public class LightSource : MonoBehaviour
     public float useRate;
     private float chargeAmmount = 0;
     private bool charging;
+    public GameObject Meter;
 
     private void Start()
     {
@@ -21,14 +22,28 @@ public class LightSource : MonoBehaviour
         {
             chargeAmmount += chargeRate * Time.deltaTime;
         }
+        showCharge();
     }
 
-    public float useCharge()
+    public bool useCharge()
     {
         if (chargeAmmount > 0)
         {
             chargeAmmount -= useRate * Time.deltaTime;
         }
-        return chargeAmmount;
+        showCharge();
+        return (chargeAmmount >= 0);
+    }
+
+    public bool hasCharge()
+    {
+        return (chargeAmmount <= 0);
+    }
+
+    private void showCharge()
+    {
+        float rate = chargeAmmount / (float)Maxcharge;
+        Meter.transform.localScale = new Vector3(Meter.transform.localScale.x, Meter.transform.localScale.y, rate * 0.25f);
+        Meter.transform.localPosition = new Vector3(Meter.transform.localPosition.x, rate * 0.25f + 0.125f, Meter.transform.localPosition.z);
     }
 }

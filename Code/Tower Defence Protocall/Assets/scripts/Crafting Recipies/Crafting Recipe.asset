@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipies:
   - material: 010000000100000001000000
-    result: {fileID: 1644378071060267235, guid: e4225172953b7e848a102eff2e593ac4,
+    result: {fileID: 8896885969078547033, guid: e4225172953b7e848a102eff2e593ac4,
       type: 3}
