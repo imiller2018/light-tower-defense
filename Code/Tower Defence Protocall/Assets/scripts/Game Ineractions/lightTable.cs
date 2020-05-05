@@ -5,14 +5,6 @@ using UnityEngine;
 public class lightTable : TableScript
 {
     public Camera headCamera;
-    public Vector3 position;
-    private Vector3 Originalposition;
-    // Update is called once per frame
-
-    void Start()
-    {
-        Originalposition = headCamera.transform.position;
-    }
 
     void Update()
     {
@@ -20,7 +12,7 @@ public class lightTable : TableScript
         {
             if (!item.GetComponent<LightSource>().useCharge())
             {
-                headCamera.transform.position = Originalposition;
+                //headCamera.transform.position = Originalposition;
             }
         }
     }
@@ -32,8 +24,8 @@ public class lightTable : TableScript
         go.transform.rotation = gameObject.transform.rotation;
         go.GetComponent<Rigidbody>().isKinematic = true;
         go.GetComponent<Collider>().enabled = true;
-        if(go.GetComponent<LightSource>().hasCharge())
-            headCamera.transform.position = position;
+        /*if(go.GetComponent<LightSource>().hasCharge())
+            headCamera.transform.position = position;*/
         holding = true;
     }
 
@@ -44,7 +36,6 @@ public class lightTable : TableScript
             holding = false;
             item.GetComponent<Rigidbody>().isKinematic = false;
             item.GetComponent<Collider>().enabled = false;
-            headCamera.transform.position = Originalposition;
             return item;
         }
         return null;

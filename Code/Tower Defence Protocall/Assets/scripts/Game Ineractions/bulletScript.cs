@@ -4,10 +4,27 @@ using UnityEngine;
 
 public class bulletScript : MonoBehaviour
 {
-    public float damage;
+    private float damage;
+    private string effect;
 
     public float getDamageVal()
     {
         return damage;
+    }
+
+    public void setstats(float dam, string eff)
+    {
+        damage = dam;
+        effect = eff;
+    }
+
+    public void setMaterial(Material m)
+    {
+        this.GetComponent<Renderer>().material = m;
+    }
+
+    public string getEffect()
+    {
+        return effect;
     }
 }

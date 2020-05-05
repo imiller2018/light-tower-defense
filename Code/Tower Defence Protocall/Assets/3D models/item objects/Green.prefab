@@ -156,6 +156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretUse: 0
   ID: 1
+  material: {fileID: 0}
+  damage: 5
+  effect: poison
 --- !u!1 &4936229315290305473
 GameObject:
   m_ObjectHideFlags: 0

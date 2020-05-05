@@ -6,7 +6,7 @@ public class CraftingTable : TableScript
 {
     public float totalCraftingTime;
     public CraftingRecipe CraftRec;
-
+    public GameObject[] holders = new GameObject[3];
     public bool isCraftable;
     private List<GameObject> items = new List<GameObject>();
     private List<Item> itemDataList = new List<Item>();
@@ -50,7 +50,7 @@ public class CraftingTable : TableScript
         itemcounter++;
         items.Add(go);
         itemDataList.Add(go.GetComponent<Item>());
-        go.transform.position = specialItem.transform.position;
+        go.transform.position = holders[itemcounter].transform.position;
         updateCrafting();
         Updatebar();
     }

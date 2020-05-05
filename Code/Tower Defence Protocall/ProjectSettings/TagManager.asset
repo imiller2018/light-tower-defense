@@ -12,6 +12,7 @@ TagManager:
   - Castle
   - Shop
   - Light
+  - Light_table
   layers:
   - Default
   - TransparentFX

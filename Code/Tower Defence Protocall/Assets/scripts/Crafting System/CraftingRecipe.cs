@@ -24,13 +24,17 @@ public class CraftingRecipe : ScriptableObject
         {
             if (R.material.Count == items.Count)
             {
+                bool same = true;
                 for (int i =0; i<R.material.Count; i++)
                 {
                     if (R.material[i] != items[i].ID)
-                        break;
+                        same = false;
                 }
-                result = R.result;
-                return true;
+                if (same)
+                {
+                    result = R.result;
+                    return true;
+                }
             }
         }
         return false;
@@ -47,9 +51,10 @@ public class CraftingRecipe : ScriptableObject
     {
         if (items.Count > 1)
         {
-            bool swapped = false;
+            bool swapped;
             do
             {
+                swapped = false;
                 for (int j = 0; j < items.Count - 1; j++)
                 {
                     if (items[j].ID > items[j + 1].ID)

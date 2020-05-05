@@ -13,6 +13,10 @@ public class Turret : MonoBehaviour
     private float reloadTimer = 0;
     private float bulletSpeed = 5;
 
+    private float damage;
+    private Material m;
+    private string effect;
+
     void start()
     {
         ammobar.active = false;
@@ -33,6 +37,8 @@ public class Turret : MonoBehaviour
         {
             reloadTimer = reloadSpeed;
             GameObject newBullet = Instantiate(bullet, this.transform.position, this.transform.rotation) as GameObject;
+            newBullet.GetComponent<bulletScript>().setstats(damage, effect);
+            newBullet.GetComponent<bulletScript>().setMaterial(m);
             newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed * 100);
             ammo--;
             updateammo();
@@ -41,6 +47,10 @@ public class Turret : MonoBehaviour
 
     public void addAmmo(GameObject go)
     {
+        Item item = go.GetComponent<Item>();
+        damage = item.damage;
+        m = item.material;
+        effect = item.effect;
         Destroy(go);
         ammo = 20;
         updateammo();

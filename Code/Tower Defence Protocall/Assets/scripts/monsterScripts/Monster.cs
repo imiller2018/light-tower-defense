@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Monster : MonoBehaviour
 {
@@ -19,7 +20,9 @@ public class Monster : MonoBehaviour
     private float coolDown = 0;
     private bool moving = false;
     private GameObject castle;
-
+    private List<string> effectList = new List<string>();
+    private float effectCounter;
+    private float slow = 1;
     /*public void SetStats(float health, float damage, float drop, float sp, float diff)
     {
         maxHealth = health;
@@ -29,6 +32,10 @@ public class Monster : MonoBehaviour
         speed = sp;
         difficulty = diff;
     }*/
+    private void Start()
+    {
+        effectList = new List<string>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -42,6 +49,12 @@ public class Monster : MonoBehaviour
             float damage = other.GetComponent<bulletScript>().getDamageVal();
             Destroy(other.gameObject);
             takeDamage(damage);
+            string eff = other.GetComponent<bulletScript>().getEffect();
+            if (eff != "")
+            {
+                effectList.Add(eff);
+                effectCounter = 5;
+            }
         }
     }
 
@@ -66,7 +79,31 @@ public class Monster : MonoBehaviour
         }
         else if (moving)
         {
-            this.GetComponent<Rigidbody>().velocity = this.transform.forward * speed;
+            this.GetComponent<Rigidbody>().velocity = this.transform.forward * (speed*slow);
+        }
+        if(effectList.Count>0)
+        {
+            foreach (string effect in effectList)
+            {
+                switch (effect)
+                {
+                    case "slow":
+                        slow = 0.7f;
+                        effectCounter -= Time.deltaTime;
+                        break;
+                    case "poison":
+                        takeDamage(Time.deltaTime);
+                        effectCounter -= Time.deltaTime;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (effectCounter <= 0)
+            {
+                slow = 1;
+                effectList = new List<string>();
+            }
         }
     }
 

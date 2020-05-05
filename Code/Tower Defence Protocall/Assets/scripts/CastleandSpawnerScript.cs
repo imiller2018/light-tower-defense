@@ -21,7 +21,7 @@ public class CastleandSpawnerScript : MonoBehaviour
     public MonsterList monsterWaveList;
     public spawners spawnLocations;
 
-    public int money = 1000;
+    public int money = 0;
 
     public float waitTimer;
     public float startTimer;
@@ -127,7 +127,7 @@ public class CastleandSpawnerScript : MonoBehaviour
                 Debug.Log("summoning");
                 difficultyCounter += diffval;
                 int rotation = UnityEngine.Random.Range(0, 4);
-                int offset = UnityEngine.Random.Range(-7, 7);
+                int offset = UnityEngine.Random.Range(-5, 5);
                 Vector3 newposition;
                 Quaternion newRot;
                 switch (rotation)

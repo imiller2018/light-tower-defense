@@ -30,8 +30,8 @@ public class LightSource : MonoBehaviour
         if (chargeAmmount > 0)
         {
             chargeAmmount -= useRate * Time.deltaTime;
+            showCharge();
         }
-        showCharge();
         return (chargeAmmount >= 0);
     }
 

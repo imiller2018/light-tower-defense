@@ -77,6 +77,7 @@
     <Compile Include="Assets\scripts\Game Ineractions\lightTable.cs" />
     <Compile Include="Assets\scripts\Game Ineractions\outterBorderScript.cs" />
     <Compile Include="Assets\scripts\HudScript.cs" />
+    <Compile Include="Assets\scripts\MainMenu.cs" />
     <Compile Include="Assets\scripts\TestScript.cs" />
     <Compile Include="Assets\scripts\monsterScripts\Monster.cs" />
     <Compile Include="Assets\scripts\monsterScripts\MonsterList.cs" />

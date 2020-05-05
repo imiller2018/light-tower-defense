@@ -264,7 +264,7 @@ public class PlayerScript : MonoBehaviour
                     armColl.enabled = true;
                 }
             }
-            else if (Tag == "table" || Tag == "turret_table" || Tag == "Shop")//check for the object hit is a table
+            else if (Tag == "table" || Tag == "turret_table" || Tag == "Shop" || Tag == "Light_table")//check for the object hit is a table
             {
                 followObj = hit.collider.gameObject.GetComponent<TableScript>().remove();
                 if (followObj != null)
@@ -320,6 +320,18 @@ public class PlayerScript : MonoBehaviour
                     dropDefault();
                 }
             }
+            else if (hit.collider.tag == "Light_table")
+            {
+                GameObject ttable = hit.collider.gameObject;
+                if (followObj.tag == "Light" && !ttable.GetComponent<TableScript>().holdingStatus())
+                {
+                    hit.collider.gameObject.GetComponent<TableScript>().attach(followObj);
+                }
+                else
+                {
+                    dropDefault();
+                }
+            }
             else if (hit.collider.tag == "Shop")
             {
                 GameObject ttable = hit.collider.gameObject;
@@ -337,6 +349,10 @@ public class PlayerScript : MonoBehaviour
                 }
             }
             //default drop item to floor
+            else
+            {
+                dropDefault();
+            }
         }
         else
         {
