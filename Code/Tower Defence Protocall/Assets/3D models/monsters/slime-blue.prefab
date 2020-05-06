@@ -245,3 +245,4 @@ MonoBehaviour:
   moneyDrop: 0
   speed: 0.5
   difficulty: 3
+  clip: {fileID: 8300000, guid: d4cd34f36973c154ba7493b9e5153659, type: 3}

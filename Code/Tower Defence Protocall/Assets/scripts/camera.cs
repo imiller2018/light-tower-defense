@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class camera : MonoBehaviour
 {
     public bool topright = false;
@@ -13,6 +15,8 @@ public class camera : MonoBehaviour
     public Vector3 botLPos;
     public Vector3 bothPos;
     public Vector3 newpostion;
+
+    public AudioClip clip;
 
 
     void Start()
@@ -55,11 +59,13 @@ public class camera : MonoBehaviour
     {
         if (stat == "BL")
         {
+            AudioSource.PlayClipAtPoint(clip, this.transform.position, 4f);
             bottomleft = !bottomleft;
             updateCamera();
         }
         else if (stat == "TR")
         {
+            AudioSource.PlayClipAtPoint(clip, this.transform.position, 4f);
             topright = !topright;
             updateCamera();
         }

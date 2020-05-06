@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class Monster : MonoBehaviour
 {
     public GameObject healthbar;
@@ -16,6 +18,8 @@ public class Monster : MonoBehaviour
     public float speed;
     public float difficulty;
 
+    public AudioClip clip;
+
     private bool stop = false;
     private float coolDown = 0;
     private bool moving = false;
@@ -23,6 +27,7 @@ public class Monster : MonoBehaviour
     private List<string> effectList = new List<string>();
     private float effectCounter;
     private float slow = 1;
+
     /*public void SetStats(float health, float damage, float drop, float sp, float diff)
     {
         maxHealth = health;
@@ -125,6 +130,7 @@ public class Monster : MonoBehaviour
         setHealthBar();
         if (remainingHealth <= 0)
         {
+            AudioSource.PlayClipAtPoint(clip, this.transform.position, 10f);
             castle.GetComponent<CastleandSpawnerScript>().monsterDied(difficulty, moneyDrop);
             Destroy(this.gameObject);
         }
