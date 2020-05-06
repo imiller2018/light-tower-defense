@@ -17,7 +17,6 @@ public class Monster : MonoBehaviour
     public int moneyDrop;
     public float speed;
     public float difficulty;
-
     public AudioClip clip;
 
     private bool stop = false;
@@ -27,7 +26,6 @@ public class Monster : MonoBehaviour
     private List<string> effectList = new List<string>();
     private float effectCounter;
     private float slow = 1;
-
     /*public void SetStats(float health, float damage, float drop, float sp, float diff)
     {
         maxHealth = health;
@@ -130,7 +128,7 @@ public class Monster : MonoBehaviour
         setHealthBar();
         if (remainingHealth <= 0)
         {
-            AudioSource.PlayClipAtPoint(clip, this.transform.position, 10f);
+            AudioSource.PlayClipAtPoint(clip, this.transform.position, 4f);
             castle.GetComponent<CastleandSpawnerScript>().monsterDied(difficulty, moneyDrop);
             Destroy(this.gameObject);
         }

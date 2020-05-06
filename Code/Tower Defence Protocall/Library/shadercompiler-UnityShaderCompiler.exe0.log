@@ -1,106 +1,24 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: preprocess
-  insize=70104 outsize=2936 ok=1
+  insize=7605 outsize=2406 ok=1
 Cmd: preprocess
-  insize=811 outsize=209 ok=1
+  insize=3466 outsize=1210 ok=1
 Cmd: preprocess
-  insize=811 outsize=209 ok=1
+  insize=3478 outsize=2592 ok=1
 Cmd: preprocess
-  insize=811 outsize=209 ok=1
+  insize=4297 outsize=3592 ok=1
 Cmd: preprocess
-  insize=811 outsize=209 ok=1
+  insize=3464 outsize=1257 ok=1
 Cmd: preprocess
-  insize=811 outsize=209 ok=1
+  insize=10559 outsize=3882 ok=1
 Cmd: preprocess
-  insize=811 outsize=209 ok=1
+  insize=7773 outsize=2674 ok=1
 Cmd: preprocess
-  insize=811 outsize=209 ok=1
+  insize=10548 outsize=3873 ok=1
 Cmd: preprocess
-  insize=811 outsize=209 ok=1
+  insize=3508 outsize=1607 ok=1
 Cmd: preprocess
-  insize=811 outsize=209 ok=1
+  insize=7631 outsize=2417 ok=1
 Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=74103 outsize=2922 ok=1
-Cmd: preprocess
-  insize=3493 outsize=507 ok=1
-Cmd: preprocess
-  insize=4590 outsize=501 ok=1
-Cmd: preprocess
-  insize=4068 outsize=501 ok=1
-Cmd: preprocess
-  insize=4809 outsize=501 ok=1
-Cmd: preprocess
-  insize=5230 outsize=503 ok=1
-Cmd: preprocess
-  insize=4405 outsize=506 ok=1
-Cmd: preprocess
-  insize=6838 outsize=497 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=811 outsize=209 ok=1
-Cmd: preprocess
-  insize=74103 outsize=2922 ok=1
-Cmd: preprocess
-  insize=3493 outsize=507 ok=1
-Cmd: preprocess
-  insize=4590 outsize=501 ok=1
-Cmd: preprocess
-  insize=4068 outsize=501 ok=1
-Cmd: preprocess
-  insize=4809 outsize=501 ok=1
-Cmd: preprocess
-  insize=5230 outsize=503 ok=1
-Cmd: preprocess
-  insize=4405 outsize=506 ok=1
-Cmd: preprocess
-  insize=6838 outsize=497 ok=1
-Cmd: preprocess
-  insize=74103 outsize=2922 ok=1
-Cmd: preprocess
-  insize=4405 outsize=506 ok=1
-Cmd: preprocess
-  insize=6838 outsize=497 ok=1
-Cmd: preprocess
-  insize=4068 outsize=501 ok=1
-Cmd: preprocess
-  insize=4590 outsize=501 ok=1
-Cmd: preprocess
-  insize=4809 outsize=501 ok=1
-Cmd: preprocess
-  insize=5230 outsize=503 ok=1
+  insize=2307 outsize=1077 ok=1

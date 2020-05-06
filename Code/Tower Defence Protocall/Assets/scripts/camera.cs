@@ -15,7 +15,6 @@ public class camera : MonoBehaviour
     public Vector3 botLPos;
     public Vector3 bothPos;
     public Vector3 newpostion;
-
     public AudioClip clip;
 
 
