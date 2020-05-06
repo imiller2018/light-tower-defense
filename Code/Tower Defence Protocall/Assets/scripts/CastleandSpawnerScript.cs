@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public struct spawners
@@ -15,6 +16,13 @@ public struct spawners
 
 public class CastleandSpawnerScript : MonoBehaviour
 {
+    public Sprite finishedLevel;
+    public Sprite Gameover;
+    public Image FinalImage;
+    public Text scoreText;
+    public Button backButton;
+    public Text backText;
+    public GameObject scoreBoard;
     public GameObject UI;
     public float maxHealth;
     public float remainingHealth;
@@ -27,9 +35,12 @@ public class CastleandSpawnerScript : MonoBehaviour
     public float startTimer;
     public float waveWaitTimer;
 
+    private bool endgame = false;
     private bool levelfinished = true;
+    private bool noMoreSpawning = false;
     private float difficultyCounter = 0;
     private float maxDifficulty;
+    public float monstercount = 0;
     private List<GameObject> monsterList;
     public bool hold = false;
     private int waveNum = -1;
@@ -49,7 +60,8 @@ public class CastleandSpawnerScript : MonoBehaviour
     {
         remainingHealth -= damage;
         UI.GetComponent<HudScript>().showHealth(remainingHealth / maxHealth);
-        if (remainingHealth<=0){
+        if (remainingHealth<=0 && !endgame){
+            endgame = true;
             EndGame();
         }
     }
@@ -62,38 +74,61 @@ public class CastleandSpawnerScript : MonoBehaviour
 
     public void EndGame()
     {
-
+        scoreBoard.GetComponent<ScoreScript>().addCastle_health((int)remainingHealth);
+        scoreBoard.GetComponent<ScoreScript>().addMoney(money);
+        FinalImage.sprite = Gameover;
+        scoreText.text = "" + scoreBoard.GetComponent<ScoreScript>().calculatescore();
+        scoreText.transform.localPosition = new Vector3(-130, 176, 0);
+        backButton.transform.localPosition = new Vector3(275, 235, 0);
+        FinalImage.enabled = true;
+        scoreText.enabled = true;
+        backButton.enabled = true;
+        backButton.image.enabled = true;
+        backText.enabled = true;
     }
 
     void Update()
     {
         if (!hold){
-            if (startTimer <= 0)
+            if (!noMoreSpawning)
             {
-                if (levelfinished)
+                if (startTimer <= 0)
                 {
-                    startTimer = waitTimer;
-                    levelfinished = false;
-                    StartNextWave();
+                    if (levelfinished)
+                    {
+                        startTimer = waitTimer;
+                        levelfinished = false;
+                        StartNextWave();
+                    }
+                    else
+                    {
+                        summonAnotherMonster();
+                        startTimer = waitTimer;
+                    }
                 }
                 else
                 {
-                    summonAnotherMonster();
-                    startTimer = waitTimer;
+                    startTimer -= Time.deltaTime;
                 }
             }
             else
             {
-                startTimer -= Time.deltaTime;
+                if(monstercount == 0 && !endgame)
+                {
+                    endgame = true;
+                    FinishedLevel();
+                }
             }
         }
     }
 
     public void monsterDied(float val, int m)
     {
+        monstercount--;
         difficultyCounter -= val;
         money += m;
         hold = false;
+        scoreBoard.GetComponent<ScoreScript>().addGameScore(200);
         UI.GetComponent<HudScript>().UpdateMoney(money);
     }
 
@@ -102,7 +137,7 @@ public class CastleandSpawnerScript : MonoBehaviour
         waveNum++;
         if (monsterWaveList.CheckEndGame(waveNum))
         {
-            FinishedLevel();
+            noMoreSpawning = true;
         }
         else
         {
@@ -158,6 +193,7 @@ public class CastleandSpawnerScript : MonoBehaviour
                         break;
                 }
                 GameObject newObject = Instantiate(monsterList[index], newposition, newRot) as GameObject;
+                monstercount++;
                 newObject.GetComponent<Monster>().SetCastle(this.gameObject);
                 newObject.GetComponent<Monster>().Move();
                 newObject.GetComponent<Monster>().HealthBarRotation(new Vector3(newposition.x, 100, newposition.z - 10));
@@ -170,6 +206,16 @@ public class CastleandSpawnerScript : MonoBehaviour
 
     private void FinishedLevel()
     {
-        Debug.Log("level finished");
+        scoreBoard.GetComponent<ScoreScript>().addCastle_health((int)remainingHealth);
+        scoreBoard.GetComponent<ScoreScript>().addMoney(money);
+        scoreBoard.GetComponent<ScoreScript>().addGameScore(10000);
+        FinalImage.sprite = finishedLevel;
+        scoreText.text = "" + scoreBoard.GetComponent<ScoreScript>().calculatescore();
+        scoreText.transform.localPosition = new Vector3(135, -47, 0);
+        FinalImage.enabled = true;
+        scoreText.enabled = true;
+        backButton.image.enabled = true;
+        backButton.enabled = true;
+        backText.enabled = true;
     }
 }
