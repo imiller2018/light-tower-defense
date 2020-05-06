@@ -37,7 +37,7 @@ public class LightSource : MonoBehaviour
 
     public bool hasCharge()
     {
-        return (chargeAmmount <= 0);
+        return (chargeAmmount >= 0);
     }
 
     private void showCharge()

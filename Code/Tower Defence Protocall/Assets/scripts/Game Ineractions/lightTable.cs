@@ -5,14 +5,17 @@ using UnityEngine;
 public class lightTable : TableScript
 {
     public Camera headCamera;
+    public bool powered = false;
+    public string conectionType;
 
     void Update()
     {
-        if (holding)
+        if (powered)
         {
             if (!item.GetComponent<LightSource>().useCharge())
             {
-                //headCamera.transform.position = Originalposition;
+                powered = false;
+                headCamera.GetComponent<camera>().changestatus(conectionType);
             }
         }
     }
@@ -24,13 +27,21 @@ public class lightTable : TableScript
         go.transform.rotation = gameObject.transform.rotation;
         go.GetComponent<Rigidbody>().isKinematic = true;
         go.GetComponent<Collider>().enabled = true;
-        /*if(go.GetComponent<LightSource>().hasCharge())
-            headCamera.transform.position = position;*/
+        if (go.GetComponent<LightSource>().hasCharge())
+        {
+            headCamera.GetComponent<camera>().changestatus(conectionType);
+            powered = true;
+        }
         holding = true;
     }
 
     public override GameObject remove()
     {
+        if (powered)
+        {
+            powered = false;
+            headCamera.GetComponent<camera>().changestatus(conectionType);
+        }
         if (holding)
         {
             holding = false;
